@@ -1,7 +1,7 @@
 import unittest2 as unittest
 from ipynb.fs.full.index import build_figure, trace, build_layout
 
-class TestDistance(unittest.TestCase):
+class TestPlotly(unittest.TestCase):
     def test_build_figure_returns_dict(self):
         self.assertTrue(isinstance(build_figure(), dict))
 
