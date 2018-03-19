@@ -147,13 +147,13 @@ Ok, in building a layout, we should also return a dictionary.
 
 
 ```python
-def build_layout(x_range = None, y_range = None, options = {}):
+def layout(x_range = None, y_range = None, options = {}):
     pass
 ```
 
 
 ```python
-build_layout()
+layout()
 # {}
 ```
 
@@ -166,7 +166,7 @@ Let's start with adding functionality for setting the range for the `x` axis.  A
 
 
 ```python
-build_layout([1, 4])
+layout([1, 4])
 # {'xaxis': {'range': [1, 4]}}
 ```
 
@@ -174,14 +174,14 @@ To have functionality that when no x_range is provided, a blank dictionary is st
 
 
 ```python
-build_layout() # {}
+layout() # {}
 ```
 
 Now modify the function so that the same functionality is provided for the `y_range`.  When the `y_range` is provided it adds a key of yaxis which points to a dictionary that expreses the yaxis range.
 
 
 ```python
-build_layout([1, 3], [4, 5])
+layout([1, 3], [4, 5])
 # {'xaxis': {'range': [1, 3]}, 'yaxis': {'range': [4, 5]}}
 ```
 
@@ -189,19 +189,12 @@ Now have the final argument of the function be options.  The `options` argument 
 
 
 ```python
-build_layout(options = {'title': 'foo'})
+layout(options = {'title': 'foo'})
 ```
 
 
-
-
-    {'title': 'foo'}
-
-
-
-
 ```python
-build_layout([1, 3], options = {'title': 'chart'})
+layout([1, 3], options = {'title': 'chart'})
 
 # {'title': 'chart', 'xaxis': {'range': [1, 3]}}
 ```
@@ -211,7 +204,7 @@ Ok, now let's see this `build_layout` function in action.
 
 ```python
 another_trace = trace_values([1, 2, 3], [6, 3, 1])
-another_layout = build_layout([-1, 4], [0, 7], {'title': 'Going Down...'})
+another_layout = layout([-1, 4], [0, 7], {'title': 'Going Down...'})
 # plot({'data': [another_trace], 'layout': another_layout})
 ```
 
