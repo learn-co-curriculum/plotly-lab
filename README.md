@@ -33,7 +33,7 @@ plot(sample_figure)
 ```
 
 
-<div id="e78825f9-a6b7-4fee-88e7-cf4899cf4af0" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("e78825f9-a6b7-4fee-88e7-cf4899cf4af0", [{"x": [1, 2, 3], "y": [2, 3, 4]}, {"x": [3, 4, 3], "y": [5, 3, 4]}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="0d271cb7-fe65-4304-a816-98efabc29445" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("0d271cb7-fe65-4304-a816-98efabc29445", [{"x": [1, 2, 3], "y": [2, 3, 4]}, {"x": [3, 4, 3], "y": [5, 3, 4]}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Ok, so for our `plot` function to work, we would like an easy way to create figures, an easy way to create layouts, and an easy way to create traces.  Let's take these one by one, and start with a `build_trace` function that easily creates traces.
@@ -53,7 +53,7 @@ And if you remember the format of our trace, each trace should look like the fol
 sample_trace = {'x': [1, 2, 3], 'y': [2, 3, 4]}
 ```
 
-So write a function called `trace` that takes in an array of datapoints and returns a dictionary with a key of `x` that points to an array of x values, and a key of `y` that points to an array of y values.
+So write a function called `build_trace` that takes in an array of datapoints and returns a dictionary with a key of `x` that points to an array of x values, and a key of `y` that points to an array of y values.
 
 
 ```python
@@ -63,6 +63,7 @@ def build_trace(data, mode = 'markers', name = 'data'):
 
 
 ```python
+data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
 # {'x': [1, 3, 2], 'y': [1, 2, 5]}
 ```
@@ -236,8 +237,3 @@ Uncomment the below code to see the updated `plot` function in action.
 ### Summary 
 
 In this lab, we built out some methods so that we can easily create graphs going forward.  We'll make good use of them in the lessons to come, as well as write new methods to help us easily display information in our charts.
-
-
-```python
-
-```
