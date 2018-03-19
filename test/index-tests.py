@@ -1,5 +1,5 @@
 import unittest2 as unittest
-from ipynb.fs.full.index import build_trace, build_layout, trace_values
+from ipynb.fs.full.index import build_trace, layout, trace_values
 
 class TestPlotly(unittest.TestCase):
     def test_build_trace_returns_dict_with_keys_of_x_and_y(self):
@@ -33,19 +33,19 @@ class TestPlotly(unittest.TestCase):
         self.assertEqual(test_trace, {'mode': 'line', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]})
 
     def test_layout_returns_dictionary(self):
-        self.assertTrue(isinstance(build_layout(), dict))
+        self.assertTrue(isinstance(layout(), dict))
 
     def test_layout_returns_dictionary(self):
-        self.assertTrue(isinstance(build_layout(), dict))
+        self.assertTrue(isinstance(layout(), dict))
 
     def test_layout_adds_x_axis(self):
-        self.assertTrue(build_layout([1, 5], {'xaxis': {'range': [1, 5]}}))
+        self.assertTrue(layout([1, 5], {'xaxis': {'range': [1, 5]}}))
 
     def test_layout_adds_y_axis(self):
-        self.assertTrue(build_layout(y_range = [2, 5]), {'yaxis': {'range': [2, 5]}})
+        self.assertTrue(layout(y_range = [2, 5]), {'yaxis': {'range': [2, 5]}})
 
     def test_layout_adds_x_axis_and_y_axis(self):
-        self.assertTrue(build_layout(y_range = [2, 5], x_range = [3, 6]), {'yaxis': {'range': [2, 5]}, 'xaxis': {'range': [3, 6]}})
+        self.assertTrue(layout(y_range = [2, 5], x_range = [3, 6]), {'yaxis': {'range': [2, 5]}, 'xaxis': {'range': [3, 6]}})
 
     def test_layout_adds_an_options_argument(self):
-        self.assertTrue(build_layout(y_range = [2, 5]), {'yaxis': {'range': [2, 5]}, 'title': 'sample title'})
+        self.assertTrue(layout(y_range = [2, 5]), {'yaxis': {'range': [2, 5]}, 'title': 'sample title'})
