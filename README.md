@@ -64,7 +64,7 @@ build_trace(data)
 # {'x': [1, 3, 2], 'y': [1, 2, 5]}
 ```
 
-So `build_trace` that takes in an list of datapoints as arguments and returns a dictionary with a key of `x` that points to an array of x values, and a key of `y` that points to an array of y values.
+So `build_trace` that takes in an list of datapoints as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
 
 
 ```python
