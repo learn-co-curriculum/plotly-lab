@@ -1,7 +1,7 @@
 
 ### Introduction
 
-In this lab we will build out functions to help us plot visualizations in lessons going forward. 
+In this lab we will build out functions to help us plot visualizations in lessons going forward.
 
 ### The Setup
 
@@ -41,14 +41,14 @@ Let's take these one by one.  We'll start with a `build_trace` function that eas
 
 #### build_trace
 
-Write a `build_trace` function that can take in data that comes in the following format: 
+Write a `build_trace` function that can take in data that comes in the following format:
 
 
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 ```
 
-And returns data like the commented out dictionary below: 
+And returns data like the commented out dictionary below:
 
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
@@ -56,7 +56,7 @@ build_trace(data)
 # {'x': [1, 3, 2], 'y': [1, 2, 5]}
 ```
 
-So `build_trace` that takes in a list of datapoints as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
+So `build_trace` that takes in a list of data points as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
 
 
 ```python
@@ -125,7 +125,7 @@ trace_values([1, 2, 3], [2, 4, 5])
 # {'x': [1, 2, 3], 'y': [2, 4, 5]}
 ```
 
-Just like our `build_trace` function, the `trace_values` function should allow us to take in an argument of `mode`, and `name` to set the value to the `mode` key, and the value to the `name` key in our returned dictionary. 
+Just like our `build_trace` function, the `trace_values` function should allow us to take in an argument of `mode`, and `name` to set the value to the `mode` key, and the value to the `name` key in our returned dictionary.
 
 
 ```python
@@ -154,7 +154,7 @@ Ok, now that we have built some functions to create traces, let's write a functi
 # plot({'data': [trace0, trace2], 'layout': {'title': 'Sample Title'}})
 ```
 
-Ok, in building a layout, we should return a dictionary. 
+Ok, in building a layout, we should return a dictionary.
 
 
 ```python
@@ -250,6 +250,6 @@ last_layout = layout(options = {'title': 'The big picture'})
 plot([trace4], last_layout)
 ```
 
-### Summary 
+### Summary
 
 In this lab, we built out some methods so that we can easily create graphs going forward.  We'll make good use of them in the lessons to come, as well as write new methods to help us easily display information in our charts.
