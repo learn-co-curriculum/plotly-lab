@@ -123,12 +123,12 @@ trace_values([1, 2, 3], [2, 4, 5])
 # {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
 ```
 
-Now let's try to build a line trace with our newly defined `trace_values` function.  We will set `mode` to 'line' and the `name` of our trace to 'line trace'.
+Now let's try to build a line trace with our newly defined `trace_values` function.  We will set `mode` to 'lines' and the `name` of our trace to 'line trace'.
 
 
 ```python
-trace_values([1, 2, 3], [2, 4, 5], 'line', 'line trace')
-# {'mode': 'line', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
+# {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
 ```
 
 From there, we can use our `trace_values` function to plot our chart.
@@ -137,7 +137,7 @@ From there, we can use our `trace_values` function to plot our chart.
 
 
 ```python
-# trace2 = trace_values([1, 2, 3], [2, 4, 5], 'line', 'line trace')
+# trace2 = trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
 # plot({'data': [trace2]})
 ```
 
