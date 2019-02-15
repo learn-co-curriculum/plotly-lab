@@ -95,8 +95,6 @@ build_trace(data, 'markers', 'sample plot')
 # {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
 ```
 
-Ok, now we have built a function to easily generate a trace.  Let's see it in action!  Uncomment some of the code below and try it out. Experiment with having your trace display with 'markers' or 'lines'.  You can only see the name of the plot if more than one trace is present, so practice adding more than one trace, to the plot.
-
 
 ```python
 # trace0 = build_trace(data)
