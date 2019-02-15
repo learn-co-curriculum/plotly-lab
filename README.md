@@ -33,7 +33,7 @@ plot(sample_figure)
 ```
 
 
-<div id="93a563df-0500-4739-ac5b-0c38d5a8a467" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("93a563df-0500-4739-ac5b-0c38d5a8a467", [{"x": [1, 2, 3], "y": [2, 3, 4]}, {"x": [2, 3, 4], "y": [5, 3, 4]}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="7cd8106c-3899-4f3a-b1be-b5c168b32372" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("7cd8106c-3899-4f3a-b1be-b5c168b32372", [{"x": [1, 2, 3], "y": [2, 3, 4], "type": "scatter", "uid": "67c7da58-30be-11e9-b15b-88e9fe4c5d44"}, {"x": [2, 3, 4], "y": [5, 3, 4], "type": "scatter", "uid": "67c7dbde-30be-11e9-a013-88e9fe4c5d44"}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Ok, now that our `plot` function works, we need an easy way to create the following:  
@@ -182,9 +182,13 @@ From there, we can use our `trace_values` function to plot our chart.
 
 
 ```python
-# trace2 = trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
-# plot({'data': [trace2]})
+trace2 = trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
+plot({'data': [trace2]})
 ```
+
+
+<div id="fd3653ac-fc16-4a5e-9787-3d2c544f21cf" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("fd3653ac-fc16-4a5e-9787-3d2c544f21cf", [{"mode": "lines", "name": "line trace", "x": [1, 2, 3], "y": [2, 4, 5], "type": "scatter", "uid": "6a286b9e-30be-11e9-9b4e-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+
 
 ### Creating layouts
 
@@ -214,6 +218,13 @@ def layout(x_range = None, y_range = None, options = {}):
 layout()
 # {}
 ```
+
+
+
+
+    {}
+
+
 
 #### Setting the xaxis and yaxis range
 
@@ -333,7 +344,7 @@ plot([trace4], last_layout)
 ```
 
 
-<div id="4ca7e4c9-10f2-4fa2-8fe7-6a7d4c16c75e" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("4ca7e4c9-10f2-4fa2-8fe7-6a7d4c16c75e", [{"x": [4, 5, 6], "y": [10, 5, 1], "mode": "lines", "name": "data"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="f676cbed-6876-46f9-82f7-5a99e149013a" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("f676cbed-6876-46f9-82f7-5a99e149013a", [{"mode": "lines", "name": "data", "x": [4, 5, 6], "y": [10, 5, 1], "type": "scatter", "uid": "6d502a28-30be-11e9-b913-88e9fe4c5d44"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 ### Summary 
