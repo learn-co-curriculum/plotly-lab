@@ -54,7 +54,7 @@ plot(sample_figure)
 ```
 
 
-<div id="7cd8106c-3899-4f3a-b1be-b5c168b32372" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("7cd8106c-3899-4f3a-b1be-b5c168b32372", [{"x": [1, 2, 3], "y": [2, 3, 4], "type": "scatter", "uid": "67c7da58-30be-11e9-b15b-88e9fe4c5d44"}, {"x": [2, 3, 4], "y": [5, 3, 4], "type": "scatter", "uid": "67c7dbde-30be-11e9-a013-88e9fe4c5d44"}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="45b920a4-b163-4849-ae13-2dbc061ae635" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("45b920a4-b163-4849-ae13-2dbc061ae635", [{"x": [1, 2, 3], "y": [2, 3, 4], "type": "scatter", "uid": "4847acc2-c5eb-11e9-aeb7-3af9d3ad3e0b"}, {"x": [2, 3, 4], "y": [5, 3, 4], "type": "scatter", "uid": "4847ae18-c5eb-11e9-93be-3af9d3ad3e0b"}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Ok, now that our `plot` function works, we need an easy way to create the following:  
@@ -88,7 +88,7 @@ And returns data like the commented out dictionary below:
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 So `build_trace` that takes in a list of data points as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
@@ -118,7 +118,7 @@ So by default, if we just call `build_trace(data)` without specifying either a m
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 
@@ -126,13 +126,13 @@ build_trace(data)
 # __SOLUTION__ 
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 
 
 
@@ -141,20 +141,20 @@ If we want our `build_trace` function to take a different mode arguement, we add
 
 ```python
 build_trace(data, 'scatter')
-# {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 ```
 
 
 ```python
 # __SOLUTION__ 
 build_trace(data, 'scatter')
-# {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 
 
 
@@ -165,25 +165,45 @@ We could do the same thing with the name of the plot.  This is useful for when w
 
 ```python
 build_trace(data, 'markers', 'sample plot')
-# {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 ```
 
 
 ```python
 # __SOLUTION__ 
 build_trace(data, 'markers', 'sample plot')
-# {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 
 
 
 
 ```python
+# trace0 = build_trace(data)
+
+# trace0 = build_trace(data, 'markers')
+# trace1 = build_trace(data, 'lines', 'my_trace')
+# plot({'data':[trace0, trace1]})
+```
+
+
+```python
+# __SOLUTION__
+# Ok, now we have built a function to easily generate a trace. Let's see it in action! Uncomment some of the code below and try it out. 
+# Experiment with having your trace display with 'markers' or 'lines'. You can only see the name of the plot if more than one trace is present, 
+# so practice adding more than one trace, to the plot.
+
+
+```
+
+
+```python
+# __SOLUTION__ 
 # trace0 = build_trace(data)
 
 # trace0 = build_trace(data, 'markers')
@@ -192,16 +212,6 @@ build_trace(data, 'markers', 'sample plot')
 ```
 
 #### trace_values
-
-
-```python
-# __SOLUTION__ 
-# trace0 = build_trace(data)
-
-# trace0 = build_trace(data, 'markers')
-# trace1 = build_trace(data, 'lines', 'my_trace')
-# plot({'data':[trace0, trace1]})
-```
 
 Now let's write another function to create a trace called `trace_values`.  It works just like our `build_trace` function, except that it takes in a list of x_values and a list of y_values and returns our trace dictionary.  We will use default argument again here in the same manner as before.
 
@@ -213,56 +223,56 @@ def trace_values(x_values, y_values, mode = 'markers', name="data"):
 
 
 ```python
-trace_values([1, 2, 3], [2, 4, 5])
-
-# {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
-```
-
-
-```python
 # __SOLUTION__ 
 def trace_values(x_values, y_values, mode = 'markers', name="data"):
      return {'x': x_values, 'y': y_values, 'mode': mode, 'name': name}
 ```
 
-Now let's try to build a line trace with our newly defined `trace_values` function.  We will set `mode` to 'lines' and the `name` of our trace to 'line trace'.
+
+```python
+trace_values([1, 2, 3], [2, 4, 5])
+
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
+```
 
 
 ```python
 # __SOLUTION__ 
 trace_values([1, 2, 3], [2, 4, 5])
 
-# {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+    {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
 
 
+
+Now let's try to build a line trace with our newly defined `trace_values` function.  We will set `mode` to 'lines' and the `name` of our trace to 'line trace'.
 
 
 ```python
 trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
-# {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 ```
-
-From there, we can use our `trace_values` function to plot our chart.
 
 
 ```python
 # __SOLUTION__ 
 trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
-# {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 ```
 
 
 
 
-    {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+    {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 
 
+
+From there, we can use our `trace_values` function to plot our chart.
 
 > Uncomment and run the code below
 
@@ -272,8 +282,6 @@ trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
 # plot({'data': [trace2]})
 ```
 
-### Creating layouts
-
 
 ```python
 # __SOLUTION__ 
@@ -282,8 +290,10 @@ plot({'data': [trace2]})
 ```
 
 
-<div id="fd3653ac-fc16-4a5e-9787-3d2c544f21cf" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("fd3653ac-fc16-4a5e-9787-3d2c544f21cf", [{"mode": "lines", "name": "line trace", "x": [1, 2, 3], "y": [2, 4, 5], "type": "scatter", "uid": "6a286b9e-30be-11e9-9b4e-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="dca1c69e-eb3d-421b-8fad-611e72b881f5" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("dca1c69e-eb3d-421b-8fad-611e72b881f5", [{"mode": "lines", "name": "line trace", "x": [1, 2, 3], "y": [2, 4, 5], "type": "scatter", "uid": "c6ca7362-c5ec-11e9-b981-3af9d3ad3e0b"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
+
+### Creating layouts
 
 Ok, now that we have built some functions to create traces, let's write a function to create a layout.  Remember that our layout also can be passed to our plot function.
 
@@ -294,24 +304,18 @@ Ok, now that we have built some functions to create traces, let's write a functi
 # plot({'data': [trace0, trace2], 'layout': {'title': 'Sample Title'}})
 ```
 
-Our `layout` function should return a dictionary, just as it's defined in the above plot.  We'll start by returning an empty dictionary then below we'll walk through building out the rest of the function.
-
 
 ```python
 # __SOLUTION__ 
 # plot({'data': [trace0, trace2], 'layout': {'title': 'Sample Title'}})
 ```
 
+Our `layout` function should return a dictionary, just as it's defined in the above plot.  We'll start by returning an empty dictionary then below we'll walk through building out the rest of the function.
+
 
 ```python
 def layout(x_range = None, y_range = None, options = {}):
     pass
-```
-
-
-```python
-layout()
-# {}
 ```
 
 
@@ -325,7 +329,11 @@ def layout(x_range = None, y_range = None, options = {}):
     return layout
 ```
 
-#### Setting the xaxis and yaxis range
+
+```python
+layout()
+# {}
+```
 
 
 ```python
@@ -340,6 +348,8 @@ layout()
     {}
 
 
+
+#### Setting the xaxis and yaxis range
 
 Oftentimes in building a layout, we want an easy way to set the range for the `x` and `y` axis.  To set a range in the x-axis of $1$ through $4$ and a range of the y-axis of $2$ through $5$, we return a layout of the following structure.
 ```python
@@ -356,14 +366,6 @@ layout([1, 4])
 # {'xaxis': {'range': [1, 4]}}
 ```
 
-We want to ensure that when an x_range is not provided, an empty dictionary is still returned.  
-```python
-layout()
-# {}
-
-```
-The `x_range` should be a default argument that sets `x_range` to `None`.  Then, only add a key of xaxis to the dictionary layout when the `x_range` does not equal `None`.
-
 
 ```python
 # __SOLUTION__ 
@@ -378,12 +380,18 @@ layout([1, 4])
 
 
 
+We want to ensure that when an x_range is not provided, an empty dictionary is still returned.  
+```python
+layout()
+# {}
+
+```
+The `x_range` should be a default argument that sets `x_range` to `None`.  Then, only add a key of xaxis to the dictionary layout when the `x_range` does not equal `None`.
+
 
 ```python
 layout() # {}
 ```
-
-Now let's provide the same functionality for the `y_range`.  When the `y_range` is provided we add a key of `yaxis` which points to a dictionary that expresses the y-axis range.
 
 
 ```python
@@ -398,13 +406,13 @@ layout() # {}
 
 
 
+Now let's provide the same functionality for the `y_range`.  When the `y_range` is provided we add a key of `yaxis` which points to a dictionary that expresses the y-axis range.
+
 
 ```python
 layout([1, 3], [4, 5])
 # {'xaxis': {'range': [1, 3]}, 'yaxis': {'range': [4, 5]}}
 ```
-
-#### Adding layout options
 
 
 ```python
@@ -420,18 +428,13 @@ layout([1, 3], [4, 5])
 
 
 
+#### Adding layout options
+
 Now have the final argument of our layout function be options.  The `options` argument should by default point to a dictionary.  And whatever is provided as pointing to the options argument should be updated into the returned dictionary.    
 
 
 ```python
 layout(options = {'title': 'foo'})
-```
-
-
-```python
-layout([1, 3], options = {'title': 'chart'})
-
-# {'title': 'chart', 'xaxis': {'range': [1, 3]}}
 ```
 
 
@@ -447,25 +450,40 @@ layout(options = {'title': 'foo'})
 
 
 
-Ok, now let's see this `layout` function in action.
+
+```python
+layout([1, 3], options = {'title': 'chart'})
+
+# {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
+```
 
 
 ```python
 # __SOLUTION__ 
 layout([1, 3], options = {'title': 'chart'})
 
-# {'title': 'chart', 'xaxis': {'range': [1, 3]}}
+# {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
 ```
 
 
 
 
-    {'title': 'chart', 'xaxis': {'range': [1, 3]}}
+    {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
 
 
+
+Ok, now let's see this `layout` function in action.
 
 
 ```python
+another_trace = trace_values([1, 2, 3], [6, 3, 1])
+another_layout = layout([-1, 4], [0, 7], {'title': 'Going Down...'})
+# plot({'data': [another_trace], 'layout': another_layout})
+```
+
+
+```python
+# __SOLUTION__ 
 another_trace = trace_values([1, 2, 3], [6, 3, 1])
 another_layout = layout([-1, 4], [0, 7], {'title': 'Going Down...'})
 # plot({'data': [another_trace], 'layout': another_layout})
@@ -475,14 +493,15 @@ Finally, we'll modify the `plot` function for you so that it takes the data, and
 
 
 ```python
-# __SOLUTION__ 
-another_trace = trace_values([1, 2, 3], [6, 3, 1])
-another_layout = layout([-1, 4], [0, 7], {'title': 'Going Down...'})
-# plot({'data': [another_trace], 'layout': another_layout})
+def plot(traces = [], layout = {}):
+    if not isinstance(traces, list): raise TypeError('first argument must be a list.  Instead is', traces)
+    if not isinstance(layout, dict): raise TypeError('second argument must be a dict.  Instead is', layout)
+    plotly.offline.iplot({'data': traces, 'layout': layout})
 ```
 
 
 ```python
+# __SOLUTION__ 
 def plot(traces = [], layout = {}):
     if not isinstance(traces, list): raise TypeError('first argument must be a list.  Instead is', traces)
     if not isinstance(layout, dict): raise TypeError('second argument must be a dict.  Instead is', layout)
@@ -493,32 +512,23 @@ Uncomment the below code to see the updated `plot` function in action.
 
 
 ```python
-# __SOLUTION__ 
-def plot(traces = [], layout = {}):
-    if not isinstance(traces, list): raise TypeError('first argument must be a list.  Instead is', traces)
-    if not isinstance(layout, dict): raise TypeError('second argument must be a dict.  Instead is', layout)
-    plotly.offline.iplot({'data': traces, 'layout': layout})
-```
-
-
-```python
 trace4 = trace_values([4, 5, 6], [10, 5, 1], mode = 'lines')
 last_layout = layout(options = {'title': 'The big picture'})
 plot([trace4], last_layout)
 ```
+
+
+```python
+# __SOLUTION__ 
+trace4 = trace_values([4, 5, 6], [10, 5, 1], mode = 'lines')
+last_layout = layout(options = {'title': 'The big picture'})
+plot([trace4], last_layout)
+```
+
+
+<div id="5980f856-d616-4087-84b3-6e72d4ca3ca0" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5980f856-d616-4087-84b3-6e72d4ca3ca0", [{"mode": "lines", "name": "data", "x": [4, 5, 6], "y": [10, 5, 1], "type": "scatter", "uid": "f8f500e6-c5ec-11e9-9ae9-3af9d3ad3e0b"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+
 
 ### Summary 
-
-
-```python
-# __SOLUTION__ 
-trace4 = trace_values([4, 5, 6], [10, 5, 1], mode = 'lines')
-last_layout = layout(options = {'title': 'The big picture'})
-plot([trace4], last_layout)
-```
-
-
-<div id="f676cbed-6876-46f9-82f7-5a99e149013a" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("f676cbed-6876-46f9-82f7-5a99e149013a", [{"mode": "lines", "name": "data", "x": [4, 5, 6], "y": [10, 5, 1], "type": "scatter", "uid": "6d502a28-30be-11e9-b913-88e9fe4c5d44"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
-
 
 In this lab, we built out some methods so that we can easily create graphs going forward.  We'll make good use of them in the lessons to come, as well as write new methods to help us easily display information in our charts.
