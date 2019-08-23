@@ -33,7 +33,7 @@ plot(sample_figure)
 ```
 
 
-<div id="7cd8106c-3899-4f3a-b1be-b5c168b32372" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("7cd8106c-3899-4f3a-b1be-b5c168b32372", [{"x": [1, 2, 3], "y": [2, 3, 4], "type": "scatter", "uid": "67c7da58-30be-11e9-b15b-88e9fe4c5d44"}, {"x": [2, 3, 4], "y": [5, 3, 4], "type": "scatter", "uid": "67c7dbde-30be-11e9-a013-88e9fe4c5d44"}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="45b920a4-b163-4849-ae13-2dbc061ae635" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("45b920a4-b163-4849-ae13-2dbc061ae635", [{"x": [1, 2, 3], "y": [2, 3, 4], "type": "scatter", "uid": "4847acc2-c5eb-11e9-aeb7-3af9d3ad3e0b"}, {"x": [2, 3, 4], "y": [5, 3, 4], "type": "scatter", "uid": "4847ae18-c5eb-11e9-93be-3af9d3ad3e0b"}], {"title": "Our sample plot"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Ok, now that our `plot` function works, we need an easy way to create the following:  
@@ -61,7 +61,7 @@ And returns data like the commented out dictionary below:
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 So `build_trace` that takes in a list of data points as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
@@ -84,13 +84,13 @@ So by default, if we just call `build_trace(data)` without specifying either a m
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 
 
 
@@ -99,13 +99,13 @@ If we want our `build_trace` function to take a different mode arguement, we add
 
 ```python
 build_trace(data, 'scatter')
-# {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 
 
 
@@ -116,17 +116,24 @@ We could do the same thing with the name of the plot.  This is useful for when w
 
 ```python
 build_trace(data, 'markers', 'sample plot')
-# {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+    {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 
 
 
-Ok, now we have built a function to easily generate a trace.  Let's see it in action!  Uncomment some of the code below and try it out. Experiment with having your trace display with 'markers' or 'lines'.  You can only see the name of the plot if more than one trace is present, so practice adding more than one trace, to the plot.
+
+```python
+# Ok, now we have built a function to easily generate a trace. Let's see it in action! Uncomment some of the code below and try it out. 
+# Experiment with having your trace display with 'markers' or 'lines'. You can only see the name of the plot if more than one trace is present, 
+# so practice adding more than one trace, to the plot.
+
+
+```
 
 
 ```python
@@ -151,13 +158,13 @@ def trace_values(x_values, y_values, mode = 'markers', name="data"):
 ```python
 trace_values([1, 2, 3], [2, 4, 5])
 
-# {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 
 
 
-    {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+    {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
 
 
 
@@ -166,13 +173,13 @@ Now let's try to build a line trace with our newly defined `trace_values` functi
 
 ```python
 trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
-# {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 ```
 
 
 
 
-    {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+    {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 
 
 
@@ -187,7 +194,7 @@ plot({'data': [trace2]})
 ```
 
 
-<div id="fd3653ac-fc16-4a5e-9787-3d2c544f21cf" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("fd3653ac-fc16-4a5e-9787-3d2c544f21cf", [{"mode": "lines", "name": "line trace", "x": [1, 2, 3], "y": [2, 4, 5], "type": "scatter", "uid": "6a286b9e-30be-11e9-9b4e-88e9fe4c5d44"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="dca1c69e-eb3d-421b-8fad-611e72b881f5" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("dca1c69e-eb3d-421b-8fad-611e72b881f5", [{"mode": "lines", "name": "line trace", "x": [1, 2, 3], "y": [2, 4, 5], "type": "scatter", "uid": "c6ca7362-c5ec-11e9-b981-3af9d3ad3e0b"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 ### Creating layouts
@@ -305,13 +312,13 @@ layout(options = {'title': 'foo'})
 ```python
 layout([1, 3], options = {'title': 'chart'})
 
-# {'title': 'chart', 'xaxis': {'range': [1, 3]}}
+# {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
 ```
 
 
 
 
-    {'title': 'chart', 'xaxis': {'range': [1, 3]}}
+    {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
 
 
 
@@ -344,7 +351,7 @@ plot([trace4], last_layout)
 ```
 
 
-<div id="f676cbed-6876-46f9-82f7-5a99e149013a" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("f676cbed-6876-46f9-82f7-5a99e149013a", [{"mode": "lines", "name": "data", "x": [4, 5, 6], "y": [10, 5, 1], "type": "scatter", "uid": "6d502a28-30be-11e9-b913-88e9fe4c5d44"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="5980f856-d616-4087-84b3-6e72d4ca3ca0" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5980f856-d616-4087-84b3-6e72d4ca3ca0", [{"mode": "lines", "name": "data", "x": [4, 5, 6], "y": [10, 5, 1], "type": "scatter", "uid": "f8f500e6-c5ec-11e9-9ae9-3af9d3ad3e0b"}], {"title": "The big picture"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 ### Summary 
