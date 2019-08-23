@@ -53,7 +53,7 @@ And returns data like the commented out dictionary below:
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 So `build_trace` that takes in a list of data points as arguments and returns a dictionary with a key of `x` that points to a list of x values, and a key of `y` that points to a list of y values.
@@ -74,7 +74,7 @@ So by default, if we just call `build_trace(data)` without specifying either a m
 ```python
 data = [{'x': 1, 'y': 1}, {'x': 3, 'y': 2}, {'x': 2, 'y': 5}]
 build_trace(data)
-# {'mode': 'markers', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 If we want our `build_trace` function to take a different mode arguement, we add a second argument when we call the function which will overwrite the mode's default argument.   
@@ -82,7 +82,7 @@ If we want our `build_trace` function to take a different mode arguement, we add
 
 ```python
 build_trace(data, 'scatter')
-# {'mode': 'scatter', 'name': 'data', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'scatter', 'name': 'data'}
 ```
 
 We could do the same thing with the name of the plot.  This is useful for when we have more than one trace in the same plot.
@@ -92,7 +92,7 @@ We could do the same thing with the name of the plot.  This is useful for when w
 
 ```python
 build_trace(data, 'markers', 'sample plot')
-# {'mode': 'markers', 'name': 'sample plot', 'x': [1, 3, 2], 'y': [1, 2, 5]}
+# {'x': [1, 3, 2], 'y': [1, 2, 5], 'mode': 'markers', 'name': 'sample plot'}
 ```
 
 
@@ -118,7 +118,7 @@ def trace_values(x_values, y_values, mode = 'markers', name="data"):
 ```python
 trace_values([1, 2, 3], [2, 4, 5])
 
-# {'mode': 'markers', 'name': 'data', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'markers', 'name': 'data'}
 ```
 
 Now let's try to build a line trace with our newly defined `trace_values` function.  We will set `mode` to 'lines' and the `name` of our trace to 'line trace'.
@@ -126,7 +126,7 @@ Now let's try to build a line trace with our newly defined `trace_values` functi
 
 ```python
 trace_values([1, 2, 3], [2, 4, 5], 'lines', 'line trace')
-# {'mode': 'lines', 'name': 'line trace', 'x': [1, 2, 3], 'y': [2, 4, 5]}
+# {'x': [1, 2, 3], 'y': [2, 4, 5], 'mode': 'lines', 'name': 'line trace'}
 ```
 
 From there, we can use our `trace_values` function to plot our chart.
@@ -215,7 +215,7 @@ layout(options = {'title': 'foo'})
 ```python
 layout([1, 3], options = {'title': 'chart'})
 
-# {'title': 'chart', 'xaxis': {'range': [1, 3]}}
+# {'xaxis': {'range': [1, 3]}, 'title': 'chart'}
 ```
 
 Ok, now let's see this `layout` function in action.
